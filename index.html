@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Story & Birthday Surprise ❤️</title>
+  <!-- FontAwesome for Premium Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Floating Flower Petals / Cherry Blossoms Container -->
+  <div id="petals-container"></div>
+
+  <!-- Clickable Floating Hearts Background -->
+  <div id="floating-hearts-bg"></div>
+
+  <!-- 1. Password Protection Overlay -->
+  <div id="password-overlay">
+    <div class="password-card" id="password-card">
+      <h2><i class="fa-solid fa-lock-open"></i> Secret Entry</h2>
+      <p>Enter the magic word to unlock the memories...<br><span style="font-size: 0.8rem; opacity: 0.6;">(Hint: Her nickname or your anniversary)</span></p>
+      <input type="password" id="password-input" placeholder="Type here..." autocomplete="off">
+      <button id="password-btn">Unlock Love <i class="fa-solid fa-heart"></i></button>
+      <div class="password-error" id="password-error"></div>
+    </div>
+  </div>
+
+  <!-- 2. Loading Screen -->
+  <div id="loading-screen">
+    <div class="loading-heart">❤️</div>
+    <div class="loading-text">Someone special is waiting...</div>
+  </div>
+
+  <!-- Main Content (Hidden until unlocked) -->
+  <div id="main-content">
+
+    <!-- Sticky Music Player Widget -->
+    <div id="music-player">
+      <div class="vinyl-disc" id="vinyl-disc"></div>
+      <div class="music-controls">
+        <button class="music-btn" id="music-prev" title="Previous"><i class="fa-solid fa-backward-step"></i></button>
+        <button class="music-btn" id="music-play" title="Play"><i class="fa-solid fa-play"></i></button>
+        <button class="music-btn" id="music-next" title="Next"><i class="fa-solid fa-forward-step"></i></button>
+        <button class="music-btn" id="music-mute" title="Mute"><i class="fa-solid fa-volume-high"></i></button>
+      </div>
+      <div class="music-info" id="music-title">Happy Birthday to You 🎹</div>
+    </div>
+
+    <!-- 3. Welcome Screen -->
+    <section id="welcome-section">
+      <h2 class="welcome-title text-romantic">Happy Birthday My Love</h2>
+      <h1 class="welcome-name text-romantic">Shivangi ❤️</h1>
+      <button class="welcome-btn" id="welcome-btn">Open Your Surprise <i class="fa-solid fa-gift"></i></button>
+    </section>
+
+    <!-- 4. Love Quiz Section (Unlocks the rest of the page) -->
+    <section id="quiz-section">
+      <div class="section-container">
+        <div class="section-header">
+          <h2><i class="fa-solid fa-heart-crack"></i> The Key to My Heart</h2>
+          <p>Answer a few questions about us to unlock the surprise...</p>
+        </div>
+        
+        <div class="quiz-card glass-panel">
+          <div id="quiz-question-container">
+            <div class="quiz-progress" id="quiz-progress">Question 1 of 4</div>
+            <h3 class="quiz-question" id="quiz-question-text">Where did we first meet?</h3>
+            <div class="quiz-options" id="quiz-options">
+              <!-- Dynamically populated options -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCKED WRAPPER: Everything below is locked until quiz is solved -->
+    <div id="locked-wrapper" class="locked-content">
+
+      <!-- 5. Animated Love Letter -->
+      <section id="love-letter-section">
+        <div class="section-container">
+          <div class="section-header">
+            <h2><i class="fa-solid fa-envelope-open-text"></i> A Letter For You</h2>
+            <p>A small message straight from my heart</p>
+          </div>
+          
+          <div class="envelope-wrapper" id="envelope-wrapper">
+            <div class="envelope-flap-top"></div>
+            <div class="envelope-flap-left"></div>
+            <div class="envelope-flap-right"></div>
+            <div class="envelope-flap-bottom"></div>
+            <div class="envelope-heart" id="envelope-heart"></div>
+            
+            <div class="letter-paper" id="letter-paper">
+              <button class="letter-close-btn" id="letter-close-btn"><i class="fa-solid fa-xmark"></i></button>
+              <div class="letter-text" id="letter-text"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. Days Together Countdown -->
+      <section id="days-counter-section">
+        <div class="section-container">
+          <div class="section-header">
+            <h2><i class="fa-solid fa-hourglass-half"></i> Time You've Blessed the Earth</h2>
+            <p>Every second you make the world brighter</p>
+          </div>
+          
+          <div class="countdown-container glass-panel">
+            <div class="days-banner" id="days-banner">7280 Days of You 💖</div>
+            <div class="ticker-grid">
+              <div class="ticker-item">
+                <div class="ticker-num" id="ticker-years">00</div>
+                <div class="ticker-label">Years</div>
+              </div>
+              <div class="ticker-item">
+                <div class="ticker-num" id="ticker-months">00</div>
+                <div class="ticker-label">Months</div>
+              </div>
+              <div class="ticker-item">
+                <div class="ticker-num" id="ticker-days">00</div>
+                <div class="ticker-label">Days</div>
+              </div>
+              <div class="ticker-item">
+                <div class="ticker-num" id="ticker-hours">00</div>
+                <div class="ticker-label">Hours</div>
+              </div>
+              <div class="ticker-item">
+                <div class="ticker-num" id="ticker-minutes">00</div>
+                <div class="ticker-label">Mins</div>
+              </div>
+              <div class="ticker-item">
+                <div class="ticker-num" id="ticker-seconds">00</div>
+                <div class="ticker-label">Secs</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. Memory Gallery (Polaroids) -->
+      <section id="gallery-section">
+        <div class="section-container">
+          <div class="section-header">
+            <h2><i class="fa-solid fa-images"></i> Polaroid Memories</h2>
+            <p>Snapshots of the beautiful times we shared</p>
+          </div>
+          
+          <div class="gallery-grid">
+            <!-- Polaroid 1 -->
+            <div class="polaroid" style="--rot: -3deg;" onclick="openMemory(0)">
+              <div class="polaroid-img-wrapper">
+                <img src="assets/images/photo1.jpg" alt="Memory 1">
+              </div>
+            </div>
+
+            <!-- Polaroid 2 -->
+            <div class="polaroid" style="--rot: 2deg;" onclick="openMemory(1)">
+              <div class="polaroid-img-wrapper">
+                <img src="assets/images/photo2.jpg" alt="Memory 2">
+              </div>
+            </div>
+
+            <!-- Polaroid 3 -->
+            <div class="polaroid" style="--rot: -1.5deg;" onclick="openMemory(2)">
+              <div class="polaroid-img-wrapper">
+                <img src="assets/images/photo3.jpg" alt="Memory 3">
+              </div>
+            </div>
+
+            <!-- Polaroid 4 -->
+            <div class="polaroid" style="--rot: 2.5deg;" onclick="openMemory(3)">
+              <div class="polaroid-img-wrapper">
+                <img src="assets/images/photo4.jpg" alt="Memory 4">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Lightbox Modal for Polaroids -->
+      <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeMemory()"><i class="fa-solid fa-xmark"></i></button>
+        <div class="lightbox-content">
+          <div class="lightbox-visual" id="lightbox-visual">
+            <!-- Dynamically populated SVG/Image -->
+          </div>
+          <div class="lightbox-details">
+            <div class="lightbox-date" id="lightbox-date">July 15, 2025</div>
+            <div class="lightbox-place" id="lightbox-place"><i class="fa-solid fa-location-dot"></i> Cafe Coffee Day</div>
+            <h3 class="lightbox-title" id="lightbox-title">Our First Coffee</h3>
+            <p class="lightbox-story" id="lightbox-story">I was so nervous, my hands were literally shaking. But the moment you walked in and smiled, all my fears dissolved. We talked for hours about everything and nothing...</p>
+            <button class="welcome-btn" onclick="closeMemory()" style="padding: 10px 25px; font-size: 0.9rem; margin-top: 25px; align-self: flex-start; border-radius: 20px;">Close Memory 🌸</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. Timeline Section -->
+      <section id="timeline-section">
+        <div class="section-container">
+          <div class="section-header">
+            <h2><i class="fa-solid fa-heart-pulse"></i> Our Love Story</h2>
+            <p>Milestones that changed our lives forever</p>
+          </div>
+          
+          <div class="timeline-wrapper">
+            <div class="timeline-line"></div>
+            
+            <!-- Event 1 -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card">
+                <div class="timeline-icon">💬</div>
+                <h3>First Chat</h3>
+                <p>It started with a simple 'Hello', and we spent the entire night texting. Little did we know this was just the beginning of a lifetime of conversations.</p>
+              </div>
+            </div>
+
+            <!-- Event 2 -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card">
+                <div class="timeline-icon">📞</div>
+                <h3>First Call</h3>
+                <p>Hearing your voice for the first time was magical. The nervous giggles, the comfortable silences, and a 4-hour call that felt like 5 minutes.</p>
+              </div>
+            </div>
+
+            <!-- Event 3 -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card">
+                <div class="timeline-icon">☕</div>
+                <h3>First Date</h3>
+                <p>Meeting you in person was when my heart skipped a beat. You were more beautiful than any picture, and I knew right then I never wanted to let you go.</p>
+              </div>
+            </div>
+
+            <!-- Event 4 -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card">
+                <div class="timeline-icon">🎂</div>
+                <h3>First Birthday Together</h3>
+                <p>Celebrating your special day holding your hand. Making wishes, cutting cakes, and realizing that your happiness is my absolute favorite thing in the world.</p>
+              </div>
+            </div>
+
+            <!-- Event 5 -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card">
+                <div class="timeline-icon">♾️</div>
+                <h3>Forever</h3>
+                <p>No matter what the future holds, my promise to you remains constant. I will always choose you, cherish you, and walk by your side, forever and always.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. Reasons Why I Love You Slider -->
+      <section id="reasons-section">
+        <div class="section-container">
+          <div class="section-header">
+            <h2><i class="fa-solid fa-list-check"></i> Reasons Why I Love You</h2>
+            <p>Just a few little things that make me fall for you every single day</p>
+          </div>
+          
+          <div class="slider-outer">
+            <div class="slider-inner" id="slider-inner">
+              <!-- Slide 1 -->
+              <div class="slide-card">
+                <div class="slide-icon">🌸</div>
+                <h3 class="slide-title">Your Kindness</h3>
+                <p class="slide-description">The gentle way you treat others, your pure heart, and how you always bring out the best in everyone around you.</p>
+              </div>
+              <!-- Slide 2 -->
+              <div class="slide-card">
+                <div class="slide-icon">😂</div>
+                <h3 class="slide-title">Your Laugh</h3>
+                <p class="slide-description">Your genuine, bubbly laugh is my absolute favorite sound in the world. It can brighten up my darkest days instantly.</p>
+              </div>
+              <!-- Slide 3 -->
+              <div class="slide-card">
+                <div class="slide-icon">😊</div>
+                <h3 class="slide-title">Your Smile</h3>
+                <p class="slide-description">The way your eyes crinkle when you smile makes my heart melt every single time. It represents peace and home to me.</p>
+              </div>
+              <!-- Slide 4 -->
+              <div class="slide-card">
+                <div class="slide-icon">🤝</div>
+                <h3 class="slide-title">Your Support</h3>
+                <p class="slide-description">You are my biggest cheerleader. Knowing you believe in me gives me the strength to conquer any obstacle in my way.</p>
+              </div>
+              <!-- Slide 5 -->
+              <div class="slide-card">
+                <div class="slide-icon">💖</div>
+                <h3 class="slide-title">Because you're YOU</h3>
+                <p class="slide-description">With all your cute quirks, your passions, your flaws, and your beauty. I love you exactly as you are, unconditionally.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="slider-nav">
+            <button class="slider-arrow" id="slider-prev"><i class="fa-solid fa-chevron-left"></i></button>
+            <div class="slider-dots" id="slider-dots"></div>
+            <button class="slider-arrow" id="slider-next"><i class="fa-solid fa-chevron-right"></i></button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10. Open When Cards Section -->
+      <section id="open-when-section">
+        <div class="section-container">
+          <div class="section-header">
+            <h2><i class="fa-solid fa-box-archive"></i> "Open When..." Letters</h2>
+            <p>Click these envelopes whenever you need these feelings</p>
+          </div>
+          
+          <div class="openwhen-grid">
+            <div class="openwhen-card" onclick="openLetter(0)">
+              <div class="openwhen-icon">😢</div>
+              <h3>Open When You're Sad</h3>
+              <p>To comfort you when things feel heavy...</p>
+            </div>
+            
+            <div class="openwhen-card" onclick="openLetter(1)">
+              <div class="openwhen-icon">🥺</div>
+              <h3>Open When You Miss Me</h3>
+              <p>To remind you that I'm always close...</p>
+            </div>
+            
+            <div class="openwhen-card" onclick="openLetter(2)">
+              <div class="openwhen-icon">😤</div>
+              <h3>Open When You're Angry</h3>
+              <p>To calm your heart and bring a smile...</p>
+            </div>
+            
+            <div class="openwhen-card" onclick="openLetter(3)">
+              <div class="openwhen-icon">😊</div>
+              <h3>Open When You're Happy</h3>
+              <p>To celebrate your beautiful joy together...</p>
+            </div>
+            
+            <div class="openwhen-card" onclick="openLetter(4)">
+              <div class="openwhen-icon">🤯</div>
+              <h3>Open When You're Stressed</h3>
+              <p>To help you breathe and ease your mind...</p>
+            </div>
+            
+            <div class="openwhen-card" onclick="openLetter(5)">
+              <div class="openwhen-icon">💖</div>
+              <h3>Open When You Need Love</h3>
+              <p>A pure reminder of how much you are cherished...</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Open When Dialog Overlay -->
+      <div class="openwhen-dialog" id="openwhen-dialog">
+        <div class="openwhen-content">
+          <h3 id="openwhen-title">Open When You're Sad</h3>
+          <div class="openwhen-letter" id="openwhen-text">
+            My Love, if you are reading this, I wish I could hold you close right now. Take a deep breath. 
+            Whatever is making you sad will pass, and I am right here with you. You are incredibly strong. 
+            Smile for me, please? ❤️
+          </div>
+          <button class="openwhen-close-btn" onclick="closeLetter()">Close Letter <i class="fa-solid fa-heart"></i></button>
+        </div>
+      </div>
+
+      <!-- 11. Secret Gift Box -->
+      <section id="gift-box-section">
+        <div class="section-container">
+          <div class="section-header">
+            <h2><i class="fa-solid fa-box-open"></i> A Secret Gift Box</h2>
+            <p>Tap the box to open and reveal the treasures inside</p>
+          </div>
+          
+          <div class="gift-container">
+            <div class="gift-box-wrapper" id="gift-box-wrapper">
+              <div class="gift-box">
+                <div class="gift-box-lid"></div>
+                <div class="gift-box-ribbon-bow"></div>
+                <div class="gift-box-ribbon-v"></div>
+                <div class="gift-box-ribbon-h"></div>
+                <div class="gift-box-body"></div>
+              </div>
+            </div>
+            
+            <!-- Revealed Gifts Carousel -->
+            <div class="gift-reveal-container" id="gift-reveal-container">
+              <div class="gift-item-card">
+                <div class="gift-item-visual" id="gift-item-visual">
+                  <!-- Dynamically populated SVG -->
+                </div>
+                <h4 id="gift-item-title">A Romantic Ring</h4>
+                <p id="gift-item-desc">A sparkling promise to keep loving you, showing my commitment to make you happy forever.</p>
+                
+                <div class="gift-nav-btns">
+                  <button class="gift-nav-btn" id="gift-prev-btn"><i class="fa-solid fa-chevron-left"></i> Prev</button>
+                  <button class="gift-nav-btn" id="gift-next-btn">Next <i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 12. Birthday Cake Section -->
+      <section id="cake-section">
+        <div class="section-container">
+          <div class="section-header">
+            <h2><i class="fa-solid fa-cake-candles"></i> Make a Wish</h2>
+            <p>Make your birthday wish and blow out the candles!</p>
+          </div>
+          
+          <div class="cake-wrapper">
+            <div class="cake">
+              <div class="candle-holder">
+                <div class="candle"><div class="wick"></div><div class="flame"></div></div>
+                <div class="candle"><div class="wick"></div><div class="flame"></div></div>
+                <div class="candle"><div class="wick"></div><div class="flame"></div></div>
+              </div>
+              <div class="cake-layer layer-top"></div>
+              <div class="cake-layer layer-middle"></div>
+              <div class="cake-layer layer-bottom"></div>
+            </div>
+            
+            <button class="cake-btn" id="cake-btn">Blow the Candles <i class="fa-solid fa-wind"></i></button>
+            <div class="mic-hint" id="mic-hint">Or allow microphone permission and blow into your mic!</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 13. Proposal Section & Stars Final -->
+      <section id="proposal-section">
+        <!-- Starry background canvas -->
+        <canvas id="stars-canvas"></canvas>
+        
+        <div class="proposal-intro-card glass-panel">
+          <div class="final-text-typing" id="final-text-typing">
+            <!-- Typing text will populate here -->
+          </div>
+          <button class="proposal-trigger-btn" id="proposal-trigger-btn" style="display: none;">One Last Click ❤️</button>
+        </div>
+      </section>
+
+    </div><!-- End locked wrapper -->
+  </div><!-- End main content -->
+
+  <!-- Proposal Modal -->
+  <div class="proposal-modal" id="proposal-modal">
+    <div class="proposal-card">
+      <h2>Will you keep making beautiful memories with me forever? 💖</h2>
+      <div class="proposal-btns">
+        <button class="proposal-btn proposal-btn-yes" id="proposal-yes">❤️ YES ❤️</button>
+        <button class="proposal-btn proposal-btn-no" id="proposal-no">NO</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fullscreen Fireworks Canvas (After YES) -->
+  <canvas id="fireworks-canvas"></canvas>
+
+  <div class="celebration-overlay" id="celebration-overlay">
+    <div class="celebration-title">Yes! ❤️</div>
+    <div class="celebration-subtitle">Happy Birthday, My Princess! 💖👑</div>
+  </div>
+
+  <!-- Birthday Celebration Popup Modal (after blowing candles) -->
+  <div class="lightbox" id="birthday-popup-overlay" style="display: none; z-index: 10000; background: rgba(10, 5, 20, 0.98);">
+    <div class="glass-panel" style="text-align: center; max-width: 500px; width: 90%; border-color: var(--color-love-red); box-shadow: var(--shadow-glow); animation: lightboxScale 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);">
+      <div style="font-size: 5rem; animation: heartbeat 1.2s infinite ease-in-out; margin-bottom: 20px; filter: drop-shadow(0 0 15px var(--color-love-red));">❤️</div>
+      <h2 class="welcome-title text-romantic" style="font-size: 2.2rem; color: var(--color-white); line-height: 1.2; margin-bottom: 10px;">Happy Birthday My Love</h2>
+      <h1 class="welcome-name text-romantic" style="font-size: 4.5rem; line-height: 1.1; margin-bottom: 25px;">Shivangi ❤️</h1>
+      <p style="font-size: 1.1rem; opacity: 0.8; margin-bottom: 30px; font-family: var(--font-handwritten); font-size: 1.6rem; color: var(--color-blush);">You deserve all the love and happiness in the world today!</p>
+      <button class="welcome-btn" id="bday-popup-close-btn" style="padding: 12px 35px; font-size: 1rem;">Continue to Final Surprise <i class="fa-solid fa-heart"></i></button>
+    </div>
+  </div>
+
+  <!-- Bottom Left Floating Birthday Toast Card -->
+  <div id="bottom-bday-toast" class="glass-panel" style="position: fixed; bottom: -150px; left: 25px; display: flex; align-items: center; gap: 15px; padding: 15px 25px; border-radius: 20px; border-color: var(--color-love-red); box-shadow: var(--shadow-glow); z-index: 9998; transition: bottom 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.5s; opacity: 0; pointer-events: none;">
+    <div style="font-size: 2.2rem; animation: heartbeat 1.5s infinite;">🎉</div>
+    <div>
+      <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.6; font-weight: 700; color: var(--color-white); margin-bottom: 2px;">Celebration!</div>
+      <div class="text-romantic" style="font-size: 1.8rem; color: var(--color-rose-gold); line-height: 1.2; font-weight: 700; text-shadow: 0 0 10px rgba(255, 51, 102, 0.3);">Happy Birthday Shivangi 🎂</div>
+    </div>
+  </div>
+
+  <!-- CDN scripts -->
+  <!-- Canvas Confetti CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <!-- Main Script -->
+  <script src="script.js"></script>
+</body>
+</html>

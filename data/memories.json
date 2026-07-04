@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "date": "Feb 14, 2025",
+    "place": "Cafe Coffee Day",
+    "title": "Our First Coffee",
+    "story": "I was so nervous, my hands were literally shaking. But the moment you walked in and smiled, all my fears dissolved. We talked for hours about everything and nothing..."
+  },
+  {
+    "id": 2,
+    "date": "April 20, 2025",
+    "place": "Marina Beach",
+    "title": "Beach Sunset Walk",
+    "story": "The sea breeze was cool, and the sky turned into a canvas of pink and orange. As we walked barefoot on the wet sand, you took my hand for the first time, and it felt like home."
+  },
+  {
+    "id": 3,
+    "date": "August 12, 2025",
+    "place": "Stargazing Camp",
+    "title": "Under the Stars",
+    "story": "Away from the city lights, we laid on a blanket and looked up at the Milky Way. A shooting star passed by, but I didn't need to make a wish—my wish was already lying next to me."
+  },
+  {
+    "id": 4,
+    "date": "October 31, 2025",
+    "place": "Grand Cinema",
+    "title": "First Movie Date",
+    "story": "We went to see a scary movie just so you could hold my arm. I pretended to be brave, but truth is, my heart was racing faster because of how close you were."
+  },
+  {
+    "id": 5,
+    "date": "July 5, 2025",
+    "place": "Rooftop Garden",
+    "title": "First Birthday Together",
+    "story": "Celebrating your birthday under fairy lights. You looked absolutely stunning, like a princess. Seeing the joy in your eyes when blowing the candles is a memory I'll treasure forever."
+  },
+  {
+    "id": 6,
+    "date": "January 1, 2026",
+    "place": "Our Cozy Balcony",
+    "title": "The Promise of Forever",
+    "story": "As the new year fireworks lit up the sky, we made a silent promise to stay by each other's side. No matter what comes, it's you and me against the world. Always."
+  }
+]
