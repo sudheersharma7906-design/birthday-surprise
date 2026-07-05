@@ -376,7 +376,7 @@ const quizData = [
   },
   {
     question: "Where is our dream travel destination?",
-    options: ["Romantic Paris 🗼", "Tropical Maldives 🏝️", "Sunny Swiss Alps 🏔️", "Historical Kyoto ⛩️"],
+    options: ["Romantic Paris 🗼", "Tropical Maldives 🏝️", "To visit a foreign country ✈️", "Historical Kyoto ⛩️"],
     correct: 2
   }
 ];
