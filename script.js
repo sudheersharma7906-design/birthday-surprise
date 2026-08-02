@@ -132,8 +132,8 @@ function showToast(text) {
 }
 
 // 1. Password Verification
-const correctPassword = "shivangi";
-const altPassword = "1004"; // anniversary
+const correctPassword = "welcome";
+const altPassword = "0000"; // anniversary
 const passwordOverlay = document.getElementById('password-overlay');
 const passwordInput = document.getElementById('password-input');
 const passwordBtn = document.getElementById('password-btn');
@@ -474,7 +474,7 @@ const letterTextDiv = document.getElementById('letter-text');
 const envelopeHeart = document.getElementById('envelope-heart');
 const letterCloseBtn = document.getElementById('letter-close-btn');
 
-const letterMessage = `Dear Love Shivangi,
+const letterMessage = `Dear Love Name,
 
 Today is not just another day.
 
@@ -1010,7 +1010,7 @@ But this is only the beginning of our journey.
 I promise to keep making you smile.
 
 Happy Birthday,
-My Love Shivangi ❤️`;
+My Love Name ❤️`;
 
 const finalTextTyping = document.getElementById('final-text-typing');
 const proposalTriggerBtn = document.getElementById('proposal-trigger-btn');
