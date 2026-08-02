@@ -4,13 +4,13 @@ A beautiful, premium, interactive one-page website designed as a digital love le
 
 ## Features
 
-1. **Password Protected Entry**: Enter "shivangi" or the anniversary date "1004" to unlock the website.
+1. **Password Protected Entry**: Enter "welcome" or the anniversary date "0000" to unlock the website.
 2. **Heartbeat Loading Screen**: 5-second aesthetic beat sequence.
 3. **Interactive Welcome Screen**: Glowing typography, floating petals, and immediate music trigger.
 4. **Music Player Box**: Sticky floating disc widget with royalty-free backing synth tones fallback (Web Audio API) so music always plays offline or online.
 5. **Love Quiz**: Correctly answer four sweet questions about the relationship to unlock the rest of the surprise.
 6. **Animated Love Letter**: Clickable envelope that flaps open, slides the letter up, and types out a heartfelt note letter-by-letter.
-7. **Live Journey Ticker**: Live counter tracking the exact years, months, days, hours, minutes, and seconds since Shivangi's birth (July 30, 2006). Shows total days since she was born on the top banner.
+7. **Live Journey Ticker**: Live counter tracking the exact years, months, days, hours, minutes, and seconds since Reference Name's birth (July 30, 2006). Shows total days since she was born on the top banner.
 8. **Polaroid Memory Gallery**: Fully interactive hand-drawn watercolor SVGs that open a blurred-glass lightbox describing beautiful memories.
 9. **Interactive Scroll Timeline**: Key milestones sliding into view smoothly on scroll.
 10. **Reasons Why I Love You**: A touch-friendly horizontal card slider carousel.
